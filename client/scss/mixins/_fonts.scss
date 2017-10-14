@@ -1,0 +1,13 @@
+@mixin ff-opensans-light {
+  font-family: 'Open Sans Light';
+  font-weight: 300;
+}
+
+@mixin ff-opensans {
+  font-family: 'Open Sans Regular';
+}
+
+@mixin ff-opensans-bold {
+  font-family: 'Open Sans Bold';
+  font-weight: 600;
+}

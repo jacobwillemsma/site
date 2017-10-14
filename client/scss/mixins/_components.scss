@@ -1,0 +1,21 @@
+@mixin selected-arrow {
+
+  @include after {
+    width: 16px;
+    height: 8px;
+    background: transparent;
+    border: 2px solid $color-brand-female;
+    border-top: none;
+    border-right: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -8px;
+    transform: rotate(-45deg);
+    z-index: 10;
+
+    @include male {
+      border-color: $color-brand-male;
+    }
+  }
+}
