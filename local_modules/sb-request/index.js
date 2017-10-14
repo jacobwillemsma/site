@@ -1,7 +1,6 @@
 import actions from 'redux/actions'
 import { modals } from 'helpers'
-import { applyOptions, DummyPromise, token } from './util'
-import messages from './messages'
+import { applyOptions, DummyPromise } from './util'
 
 
 /*
@@ -34,16 +33,10 @@ const createResponseHandler = (req, opts) => {
 
     activeOnceRequests[opts.method][opts.endpoint] = false
 
-    // Token
-
-    if (opts.tokenName && res && res.body) {
-      token.update(opts.tokenName, res.body.token)
-    }
-
     // Loader
 
     if (!activeRequestCount) {
-      hideLoaderTimer = setTimeout(actions.ui.hideRequestLoader, 100)
+      // hideLoaderTimer = setTimeout(actions.ui.hideRequestLoader, 100)
     }
 
     if (showLoaderTimer) {
@@ -71,7 +64,7 @@ const createResponseHandler = (req, opts) => {
       && opts.withErrorModal
     ) {
       actions.modals.open(modals.Dialog, {
-        title: messages.dialogModalTitle,
+        title: 'Something went wrong',
         content: res.body.message,
       })
     }
@@ -108,7 +101,6 @@ const defaultOptions = {
  * @param {Object} options.headers
  * @param {Object} options.query
  * @param {Object} options.body
- * @param {String} options.tokenName
  * @param {Boolean} options.withCredentials
  * @param {Boolean} options.multiple - if request can be called multiple times
  * @param {number} options.delay

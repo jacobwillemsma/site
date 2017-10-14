@@ -5,6 +5,6 @@ export default {
 
   services: {
     base: `http://local.dev:${baseConfig.http.port}/`,
-    api: `http://local.dev:${baseConfig.http.port}/`,
+    api: `http://104.236.245.207:3000/`,
   },
 }

@@ -7,7 +7,7 @@ import styles from './OrganizationLogo.scss'
 import noImage from './images/no-image.svg'
 
 
-const OrganizationLogo = ({ src, ...rest }) => {
+const OrganizationLogo = ({ children, src, ...rest }) => {
   const styleName = cx('logo', {
     'noImage': !Boolean(src),
   })
@@ -15,6 +15,7 @@ const OrganizationLogo = ({ src, ...rest }) => {
   return (
     <div styleName={styleName} {...rest}>
       <img src={src || noImage} />
+      {children}
     </div>
   )
 }

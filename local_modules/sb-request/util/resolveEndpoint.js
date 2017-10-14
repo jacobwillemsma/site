@@ -6,11 +6,7 @@ const resolveEndpoint = (endpoint) => {
     return endpoint
   }
 
-  if (config.propENV === 'development') {
-    return config.services.api + endpoint.replace(/^\//, '')
-  }
-    
-  return `${window.location.origin}/${endpoint.replace(/^\//, '')}`
+  return config.services.api + endpoint.replace(/^\//, '')
 }
 
 export default resolveEndpoint

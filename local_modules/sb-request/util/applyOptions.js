@@ -27,9 +27,9 @@ const applyOptions = (opts) => {
     req.send(opts.body)
   }
 
-  if (opts.sameOrigin) {
-    req.withCredentials()
-  }
+  // if (opts.sameOrigin) {
+  //   req.withCredentials()
+  // }
 
   return req
 }

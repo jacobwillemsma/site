@@ -94,6 +94,15 @@ b {
 }
 
 
+:global(.hiddenInput) {
+  height: 0;
+  padding: 0;
+  position: fixed;
+  left: -9999px;
+  line-height: 0;
+  font-size: 0;
+}
+
 :global(.h100) {
   height: 100%;
 }
