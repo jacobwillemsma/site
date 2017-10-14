@@ -7,27 +7,23 @@ import styles from './Preview.scss'
 
 import Button from 'components/Button/Button'
 import CodeEditor from 'components/CodeEditor/CodeEditor'
+import Balance from 'components/screening/Balance/Balance'
+import Rewards from 'components/screening/Rewards/Rewards'
 
 
-const Preview = ({ code }) => (
+const Preview = ({
+  data: {
+    company: { logo: companyLogo, name: companyName },
+    name, description, bounty, balance, rewards, code,
+  },
+}) => (
   <div styleName="preview">
-    <div styleName="name">Name</div>
-    <div styleName="behaviour">Behaviour</div>
-    <div styleName="budget">100 / 10000 ETH</div>
-    <div styleName="rewards">
-      <div styleName="reward">
-        <span>Critical</span>
-        <span>10</span>
-      </div>
-      <div styleName="reward">
-        <span>Major</span>
-        <span>3</span>
-      </div>
-      <div styleName="reward">
-        <span>Minor</span>
-        <span>1</span>
-      </div>
-    </div>
+    <div styleName="name">{name}</div>
+    <div styleName="desc">{description}</div>
+    <div styleName="title">Balance:</div>
+    <Balance {...{ bounty, balance }} />
+    <div styleName="title">Rewards:</div>
+    <Rewards items={rewards} />
     <div styleName="code">
       <CodeEditor code={code} />
     </div>
@@ -38,9 +34,9 @@ const Preview = ({ code }) => (
 )
 
 export default connect({
-  code: (state) => {
+  data: (state) => {
     const { deals: { items, activeIndex } } = state
 
-    return items.get(activeIndex).get('code')
+    return items.get(activeIndex)
   },
 })(cssModules(Preview, styles))

@@ -7,9 +7,19 @@
   height: $width-sidebar;
   display: block;
   position: relative;
+  cursor: pointer;
   
-  &:hover {
-    background-color: #333;
+  &:hover,
+  &.active {
+
+    svg {
+      fill: #fff;
+    }
+  }
+
+  &.active {
+    background-color: #1c1821;
+    cursor: default;
   }
 }
 
@@ -21,6 +31,6 @@
   svg {
     width: 100%;
     height: 100%;
-    fill: #fff;
+    fill: #a19ca7;
   }
 }

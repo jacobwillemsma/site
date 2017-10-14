@@ -5,11 +5,11 @@
 
     @include after {
       width: 4px;
-      height: 100%;
       background-color: $color-purple;
       position: absolute;
       left: 0;
       top: 0;
+      bottom: -1px;
     }
   }
 }
@@ -22,5 +22,18 @@
 }
 
 .name {
-  display: block;
+  @include ff-opensans-bold;
+  font-size: 16px;
+}
+
+.desc {
+  margin-top: 5px;
+  font-size: 12px;
+  color: $color-f-lighter;
+}
+
+.title {
+  margin-top: 15px;
+  @include ff-opensans-bold;
+  font-size: 14px;
 }

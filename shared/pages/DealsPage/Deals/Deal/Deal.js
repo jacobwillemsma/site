@@ -5,10 +5,16 @@ import cx from 'classnames'
 import cssModules from 'react-css-modules'
 import styles from './Deal.scss'
 
+import Balance from 'components/screening/Balance/Balance'
+import Rewards from 'components/screening/Rewards/Rewards'
+
 
 const Deal = (props) => {
   const {
-    data: { company: { logo: companyLogo, name: companyName }, name },
+    data: {
+      company: { logo: companyLogo, name: companyName },
+      name, description, bounty, balance, rewards,
+    },
     isActive, className, onClick,
   } = props
 
@@ -24,6 +30,11 @@ const Deal = (props) => {
         </Box>
         <Box auto>
           <div styleName="name">{name}</div>
+          <div styleName="desc">{description}</div>
+          <div styleName="title">Balance:</div>
+          <Balance {...{ bounty, balance }} />
+          <div styleName="title">Rewards:</div>
+          <Rewards items={rewards} />
         </Box>
       </Flex>
     </div>

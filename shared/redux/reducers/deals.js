@@ -9,22 +9,14 @@ const deals = [
     },
     name: 'Escrow',
     code: '1111',
-  },
-  {
-    company: {
-      logo: '',
-      name: 'Zdesc',
+    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+    balance: 100,
+    bounty: 1000,
+    rewards: {
+      critical: 30,
+      major: 4,
+      minor: 1,
     },
-    name: 'Reputation',
-    code: '2222',
-  },
-  {
-    company: {
-      logo: '',
-      name: 'Zdesc',
-    },
-    name: 'DRM',
-    code: '3333',
   },
   {
     company: {
@@ -32,23 +24,63 @@ const deals = [
       name: 'Zdesc',
     },
     name: 'Escrow',
-    code: '4444',
+    code: '1111',
+    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+    balance: 100,
+    bounty: 1000,
+    rewards: {
+      critical: 30,
+      major: 4,
+      minor: 1,
+    },
   },
   {
     company: {
       logo: '',
       name: 'Zdesc',
     },
-    name: 'Reputation',
-    code: '5555',
+    name: 'Escrow',
+    code: '1111',
+    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+    balance: 100,
+    bounty: 1000,
+    rewards: {
+      critical: 30,
+      major: 4,
+      minor: 1,
+    },
   },
   {
     company: {
       logo: '',
       name: 'Zdesc',
     },
-    name: 'DRM',
-    code: '6666',
+    name: 'Escrow',
+    code: '1111',
+    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+    balance: 100,
+    bounty: 1000,
+    rewards: {
+      critical: 30,
+      major: 4,
+      minor: 1,
+    },
+  },
+  {
+    company: {
+      logo: '',
+      name: 'Zdesc',
+    },
+    name: 'Escrow',
+    code: '1111',
+    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+    balance: 100,
+    bounty: 1000,
+    rewards: {
+      critical: 30,
+      major: 4,
+      minor: 1,
+    },
   },
 ]
 

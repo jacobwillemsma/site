@@ -1,0 +1,30 @@
+.amount {
+  height: 8px;
+  background-color: #d8ead8;
+  margin-top: 30px;
+  position: relative;
+  border-radius: 4px;
+}
+
+.bountyAmount,
+.balanceAmount {
+  position: absolute;
+  bottom: 12px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.bountyAmount {
+  right: 0;
+}
+
+.balanceLine {
+  height: 100%;
+  position: relative;
+  background-color: #28ce28;
+  border-radius: 4px 0 0 4px;
+}
+
+.balanceAmount {
+  left: 0;
+}

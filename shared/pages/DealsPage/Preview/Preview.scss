@@ -4,34 +4,19 @@
 
 .name {
   @include ff-opensans-bold;
-  font-size: 20px;
+  font-size: 22px;
 }
 
-.behaviour {
+.desc {
+  margin-top: 5px;
+  font-size: 12px;
+  color: $color-f-lighter;
+}
+
+.title {
   margin-top: 15px;
+  @include ff-opensans-bold;
   font-size: 14px;
-}
-
-.budget {
-  margin-top: 15px;
-  font-size: 18px;
-}
-
-.rewards {
-  max-width: 120px;
-  margin-top: 15px;
-}
-
-.reward {
-  display: flex;
-  justify-content: space-between;
-
-  span {
-
-    &:last-child {
-      @include ff-opensans-bold;
-    }
-  }
 }
 
 .code {
