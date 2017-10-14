@@ -1,0 +1,29 @@
+@keyframes sk-rotateplane {
+
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+
+.loaderContainer {
+  background-color: rgba(#fff, 0.78);
+  @include absolute-centring;
+  z-index: 10000000;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  background-color: $color-brand;
+  @include absolute-centring;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
