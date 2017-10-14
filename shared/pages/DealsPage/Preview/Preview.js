@@ -11,6 +11,10 @@ import Balance from 'components/screening/Balance/Balance'
 import Rewards from 'components/screening/Rewards/Rewards'
 
 
+const ReviewButton = (props) => (
+  <Button to={links.abs.deal.replace(':address', 0)} {...props}>Review</Button>
+)
+
 const Preview = ({
   data: {
     company: { logo: companyLogo, name: companyName },
@@ -18,7 +22,10 @@ const Preview = ({
   },
 }) => (
   <div styleName="preview">
-    <div styleName="name">{name}</div>
+    <div styleName="header">
+      <div styleName="name">{name}</div>
+      <ReviewButton md />
+    </div>
     <div styleName="desc">{description}</div>
     <div styleName="title">Balance:</div>
     <Balance {...{ bounty, balance }} />
@@ -28,7 +35,7 @@ const Preview = ({
       <CodeEditor code={code} />
     </div>
     <div styleName="buttonContainer">
-      <Button lg to={links.abs.deal.replace(':address', 12345)}>Review</Button>
+      <ReviewButton lg />
     </div>
   </div>
 )

@@ -26,5 +26,33 @@
   pre {
     background: none !important;
     background-color: transparent !important;
+
+    code {
+
+      &:nth-child(2) {
+        position: relative;
+        z-index: 20;
+      }
+    }
   }
+
+  :global(.react-syntax-highlighter-line-number) {
+    padding: 0 2px;
+    display: block;
+    text-align: center;
+    @include no-user-select;
+  }
+}
+
+.activeLineNumber,
+.activeMidLineNumber {
+  color: #000;
+}
+
+.activeLineNumber {
+  background-color: #fff800;
+}
+
+.activeMidLineNumber {
+  background-color: #fff92a;
 }

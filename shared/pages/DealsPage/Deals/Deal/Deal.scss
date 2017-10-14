@@ -1,15 +1,35 @@
 .card {
   position: relative;
 
+  @include after {
+    width: 4px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: -1px;
+    transition: background-color 0.3s ease;
+  }
+
+  &:hover,
   &.active {
 
     @include after {
-      width: 4px;
       background-color: $color-purple;
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: -1px;
+    }
+  }
+
+  &:hover {
+
+    @include after {
+      background-color: #d8bee8;
+    }
+  }
+
+  &.active {
+
+    @include after {
+      background-color: $color-purple;
     }
   }
 }

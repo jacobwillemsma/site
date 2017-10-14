@@ -1,0 +1,27 @@
+.lineRange {
+  margin-bottom: 20px;
+  font-size: 14px;
+
+  span {
+    font-size: 16px;
+    @include ff-opensans-bold;
+  }
+}
+
+.categories {
+  margin-top: 12px;
+  margin-left: -20px;
+  font-size: 0;
+}
+
+.category {
+  margin: 8px 0 0 20px;
+  @include inline-block;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.buttonContainer {
+  margin-top: 30px;
+  text-align: center;
+}

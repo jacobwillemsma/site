@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'sb-proptypes'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { obsidian } from 'react-syntax-highlighter/dist/styles'
 
@@ -6,19 +7,99 @@ import cssModules from 'react-css-modules'
 import styles from './CodeEditor.scss'
 
 
+const lineNumberClassName = 'react-syntax-highlighter-line-number'
+
+const codeIcon = (
+  <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" role="img" aria-labelledby="title-s260x81" style={{ maxHeight: '100%', maxWidth: '100%', overflow: 'hidden', verticalAlign: 'bottom' }}>
+    <path d="M14.155 4.055a1 1 0 0 0-1.271.62l-4.83 14.046a1 1 0 0 0 1.891.65l4.83-14.045a1 1 0 0 0-.62-1.271m-6.138 8.21l-2.58-2.501L8.236 7.05a.999.999 0 1 0-1.392-1.436l-3.54 3.432a1 1 0 0 0 0 1.436l3.32 3.219a1 1 0 1 0 1.393-1.436m12.219 1.568l-3.32-3.22a.999.999 0 1 0-1.393 1.437l2.58 2.5-2.799 2.715a.999.999 0 1 0 1.392 1.436l3.54-3.432a1 1 0 0 0 0-1.436" fill="#fff" fillRule="evenodd" role="presentation"/>
+  </svg>
+)
+
 @cssModules(styles, { allowMultiple: true })
 export default class CodeEditor extends React.Component {
+
+  static propTypes = {
+    isEditable: PropTypes.bool,
+  }
+
+  startSelectLineNumber = null
+  endSelectLineNumber = null
+
+  componentDidMount() {
+    this.lineNumberNodes = Array.prototype.slice.call(this.editorNode.getElementsByClassName(lineNumberClassName))
+
+    this.bindListener()
+  }
+
+  componentWillUnmount() {
+    this.unbindListener()
+  }
+
+  bindListener() {
+    document.addEventListener('click', this.handleNumberClick)
+  }
+
+  unbindListener() {
+    document.removeEventListener('click', this.handleNumberClick)
+  }
+
+  handleNumberClick = (event) => {
+    const { isEditable, onRangeSelected } = this.props
+
+    if (!isEditable) {
+      return
+    }
+
+    if (event.target.className.indexOf(lineNumberClassName) >= 0) {
+      const selectedIndex = this.lineNumberNodes.indexOf(event.target)
+
+      if (this.startSelectLineNumber !== null && this.endSelectLineNumber !== null) {
+        this.lineNumberNodes[this.startSelectLineNumber].classList.remove(styles.activeLineNumber)
+        this.lineNumberNodes[this.endSelectLineNumber].classList.remove(styles.activeLineNumber)
+
+        for (let i = this.startSelectLineNumber + 1; i < this.endSelectLineNumber; i++) {
+          this.lineNumberNodes[i].classList.remove(styles.activeMidLineNumber)
+        }
+
+        this.startSelectLineNumber = null
+        this.endSelectLineNumber = null
+      }
+
+      if (this.startSelectLineNumber !== null) {
+        if (selectedIndex > this.startSelectLineNumber) {
+          this.endSelectLineNumber = selectedIndex
+        }
+        else {
+          this.endSelectLineNumber = this.startSelectLineNumber
+          this.startSelectLineNumber = selectedIndex
+        }
+      }
+      else {
+        this.startSelectLineNumber = selectedIndex
+      }
+
+      event.target.classList.add(styles.activeLineNumber)
+
+      if (this.startSelectLineNumber !== null && this.endSelectLineNumber !== null) {
+        for (let i = this.startSelectLineNumber + 1; i < this.endSelectLineNumber; i++) {
+          this.lineNumberNodes[i].classList.add(styles.activeMidLineNumber)
+        }
+
+        onRangeSelected({
+          start: this.startSelectLineNumber + 1,
+          end: this.endSelectLineNumber + 1,
+        })
+      }
+    }
+  }
 
   render() {
 
     return (
-      <div styleName="codeEditor">
+      <div styleName="codeEditor" ref={(el) => this.editorNode = el}>
         <div styleName="header">
           <div styleName="title">Solidity</div>
-          <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" role="img" label="Hide Code Snippet" aria-labelledby="title-s260x81" style={{ maxHeight: '100%', maxWidth: '100%', overflow: 'hidden', verticalAlign: 'bottom' }}>
-            <title id="title-s260x81">Hide Code Snippet</title>
-            <path d="M14.155 4.055a1 1 0 0 0-1.271.62l-4.83 14.046a1 1 0 0 0 1.891.65l4.83-14.045a1 1 0 0 0-.62-1.271m-6.138 8.21l-2.58-2.501L8.236 7.05a.999.999 0 1 0-1.392-1.436l-3.54 3.432a1 1 0 0 0 0 1.436l3.32 3.219a1 1 0 1 0 1.393-1.436m12.219 1.568l-3.32-3.22a.999.999 0 1 0-1.393 1.437l2.58 2.5-2.799 2.715a.999.999 0 1 0 1.392 1.436l3.54-3.432a1 1 0 0 0 0-1.436" fill="#fff" fillRule="evenodd" role="presentation"/>
-          </svg>
+          {codeIcon}
         </div>
         <div styleName="code">
           <SyntaxHighlighter language="javascript" style={obsidian} showLineNumbers>
@@ -111,7 +192,7 @@ export default class CodeEditor extends React.Component {
     function startDeal() onlyMember {
 
       require(this.balance >= dealInfo.deposit);
-      require(dealParty.executor != 0x0);
+      require(dealParty.executor != nullx0);
       require(customerConfirmDeal && executorConfirmDeal);
 
       startDate = now;

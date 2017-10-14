@@ -7,6 +7,7 @@ import styles from './Deal.scss'
 
 import Balance from 'components/screening/Balance/Balance'
 import Rewards from 'components/screening/Rewards/Rewards'
+import OrganizationLogo from 'components/OrganizationLogo/OrganizationLogo'
 
 
 const Deal = (props) => {
@@ -26,7 +27,8 @@ const Deal = (props) => {
     <div styleName={styleName} className={className} onClick={onClick}>
       <Flex>
         <Box>
-          <img styleName="companyLogo" src={companyLogo} />
+          <OrganizationLogo styleName="companyLogo" src={companyLogo} />
+          <img  src={companyLogo} />
         </Box>
         <Box auto>
           <div styleName="name">{name}</div>
