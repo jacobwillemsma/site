@@ -1,0 +1,26 @@
+.nav {
+  display: block;
+}
+
+.link {
+  width: $width-sidebar;
+  height: $width-sidebar;
+  display: block;
+  position: relative;
+  
+  &:hover {
+    background-color: #333;
+  }
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  @include absolute-centring;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+  }
+}

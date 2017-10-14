@@ -92,3 +92,8 @@ a {
 b {
   font-weight: 400;
 }
+
+
+:global(.h100) {
+  height: 100%;
+}

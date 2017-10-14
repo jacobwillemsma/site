@@ -1,0 +1,26 @@
+.card {
+  position: relative;
+
+  &.active {
+
+    @include after {
+      width: 4px;
+      height: 100%;
+      background-color: $color-purple;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+.companyLogo {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin-right: 20px;
+}
+
+.name {
+  display: block;
+}

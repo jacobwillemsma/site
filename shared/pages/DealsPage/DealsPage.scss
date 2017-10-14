@@ -1,0 +1,32 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.leftSide {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.rightSide {
+  height: 100%;
+  border-left: 1px solid $color-border;
+  position: absolute;
+  left: 30%;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: rgba(#000, 0.03) -2px 0 0;
+}
+
+.content {
+  padding: 20px;
+}

@@ -1,0 +1,13 @@
+.link {
+  text-decoration: none;
+  cursor: pointer;
+
+  @include any-link {
+    color: #1a84ef;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    color: #2d9fff;
+  }
+}

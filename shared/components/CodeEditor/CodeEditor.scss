@@ -1,0 +1,30 @@
+.codeEditor {
+  width: 100%;
+  background-color: #3c444c;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.header {
+  height: 34px;
+  padding: 0 4px 0 8px;
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 16px;
+  color: #fff;
+}
+
+.code {
+  background-color: #252B2F;
+  border-radius: 4px;
+
+  pre {
+    background: none !important;
+    background-color: transparent !important;
+  }
+}

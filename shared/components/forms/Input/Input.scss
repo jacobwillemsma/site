@@ -1,0 +1,43 @@
+input, textarea {
+  outline: none;
+}
+
+.root {
+  display: block;
+}
+
+.label {
+  display: block;
+  border: 1px solid $color-border;
+  padding: 8px 12px;
+  border-bottom: 0;
+  line-height: 20px;
+  font-size: 14px;
+  color: $color-f-lighter;
+  pointer-events: none;
+  transition: all 0.13s ease;
+  border-radius: 2px 2px 0 0;
+}
+
+.input {
+  width: 100%;
+  background: none;
+  background-color: #fff;
+  border: 1px solid $color-border;
+  padding: 15px 12px;
+  vertical-align: top;
+  line-height: 16px;
+  font-size: 16px;
+  color: #000;
+  border-radius: 0 0 2px 2px;
+
+  &:focus {
+    border-color: #8475c2;
+  }
+}
+
+textarea.input {
+  line-height: 18px;
+  padding: 15px 12px;
+  font-size: 16px;
+}

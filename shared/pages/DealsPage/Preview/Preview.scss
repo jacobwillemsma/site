@@ -1,0 +1,44 @@
+.preview {
+  height: 100%;
+}
+
+.name {
+  @include ff-opensans-bold;
+  font-size: 20px;
+}
+
+.behaviour {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.budget {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.rewards {
+  max-width: 120px;
+  margin-top: 15px;
+}
+
+.reward {
+  display: flex;
+  justify-content: space-between;
+
+  span {
+
+    &:last-child {
+      @include ff-opensans-bold;
+    }
+  }
+}
+
+.code {
+  margin-top: 20px;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+  text-align: center;
+}
