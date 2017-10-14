@@ -2,14 +2,14 @@ import React from 'react'
 import actions from 'redux/actions'
 
 import cssModules from 'react-css-modules'
-import styles from './AccountPage.scss'
+import styles from './OrganizationPage.scss'
 
 import NoOrganization from './NoOrganization/NoOrganization'
 import Organization from './Organization/Organization'
 
 
 @cssModules(styles, { allowMultiple: true })
-export default class AccountPage extends React.Component {
+export default class OrganizationPage extends React.Component {
 
   state = {
     src: null,

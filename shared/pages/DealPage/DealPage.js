@@ -7,6 +7,7 @@ import styles from './DealPage.scss'
 import CodeEditor from 'components/CodeEditor/CodeEditor'
 import Balance from 'components/screening/Balance/Balance'
 import Rewards from 'components/screening/Rewards/Rewards'
+import Header from 'components/Header/Header'
 
 import ReviewForm from './ReviewForm/ReviewForm'
 
@@ -36,10 +37,8 @@ export default class DealPage extends React.Component {
     return (
       <div styleName="container">
         <div styleName="leftSide">
+          <Header title={name} />
           <div styleName="content">
-            <div styleName="header">
-              <div styleName="name">{name}</div>
-            </div>
             <div styleName="desc">{description}</div>
             <div styleName="title">Balance:</div>
             <Balance {...{ bounty, balance }} />

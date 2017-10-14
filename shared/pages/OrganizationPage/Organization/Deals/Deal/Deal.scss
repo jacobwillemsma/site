@@ -58,3 +58,14 @@
   @include ff-opensans-bold;
   font-size: 14px;
 }
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -10px;
+
+  > div {
+    width: 50%;
+    padding: 0 10px;
+  }
+}

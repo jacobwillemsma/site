@@ -9,6 +9,8 @@ import Button from 'components/Button/Button'
 import CodeEditor from 'components/CodeEditor/CodeEditor'
 import Balance from 'components/screening/Balance/Balance'
 import Rewards from 'components/screening/Rewards/Rewards'
+import Header from 'components/Header/Header'
+import Content from 'components/Content/Content'
 
 
 const ReviewButton = (props) => (
@@ -22,21 +24,22 @@ const Preview = ({
   },
 }) => (
   <div styleName="preview">
-    <div styleName="header">
-      <div styleName="name">{name}</div>
+    <Header title={name}>
       <ReviewButton md />
-    </div>
-    <div styleName="desc">{description}</div>
-    <div styleName="title">Balance:</div>
-    <Balance {...{ bounty, balance }} />
-    <div styleName="title">Rewards:</div>
-    <Rewards items={rewards} />
-    <div styleName="code">
-      <CodeEditor code={code} />
-    </div>
-    <div styleName="buttonContainer">
-      <ReviewButton lg />
-    </div>
+    </Header>
+    <Content>
+      <div styleName="desc">{description}</div>
+      <div styleName="title">Balance:</div>
+      <Balance {...{ bounty, balance }} />
+      <div styleName="title">Rewards:</div>
+      <Rewards items={rewards} />
+      <div styleName="code">
+        <CodeEditor code={code} />
+      </div>
+      <div styleName="buttonContainer">
+        <ReviewButton lg />
+      </div>
+    </Content>
   </div>
 )
 

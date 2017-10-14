@@ -42,11 +42,11 @@ export default class Claim extends React.Component {
         </div>
         <div styleName="code">
           <CodeEditor>
-            {`Structures.ProposedChanges proposedChanges;
+{`Structures.ProposedChanges proposedChanges;
 
-          address[] public executors;
+address[] public executors;
 
-          bool executorAcceptChanges;`}
+bool executorAcceptChanges;`}
           </CodeEditor>
         </div>
         <div styleName="comment">{comment}</div>

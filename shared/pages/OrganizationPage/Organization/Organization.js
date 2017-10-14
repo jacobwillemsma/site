@@ -7,6 +7,7 @@ import Deals from './Deals/Deals'
 import Claims from './Claims/Claims'
 
 import OrganizationLogo from 'components/OrganizationLogo/OrganizationLogo'
+import Header from 'components/Header/Header'
 
 
 @cssModules(styles, { allowMultiple: true })
@@ -23,11 +24,11 @@ export default class Organization extends React.Component {
           </div>
         </div>
         <div styleName="middleSide">
-          <div styleName="header">Organization Screenings</div>
+          <Header title="Organization Screenings" />
           <Deals />
         </div>
         <div styleName="rightSide">
-          <div styleName="header">Claims</div>
+          <Header title="Claims" />
           <Claims />
         </div>
       </div>

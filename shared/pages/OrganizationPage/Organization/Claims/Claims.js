@@ -1,7 +1,5 @@
 import React from 'react'
-import { Flex, Box } from 'sb-flexbox'
 import { connect } from 'redaction/immutable'
-import actions from 'redux/actions'
 
 import cssModules from 'react-css-modules'
 import styles from './Deals.scss'

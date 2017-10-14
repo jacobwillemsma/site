@@ -29,15 +29,6 @@
   right: 0;
 }
 
-.header {
-  height: 60px;
-  line-height: 60px;
-  border-bottom: 1px solid $color-border;
-  padding: 0 20px;
-  @include ff-opensans-bold;
-  font-size: 22px;
-}
-
 .content {
   padding: 20px;
 }

@@ -6,7 +6,6 @@ import styles from './Deal.scss'
 
 import Balance from 'components/screening/Balance/Balance'
 import Rewards from 'components/screening/Rewards/Rewards'
-
 import Button from 'components/Button/Button'
 
 
@@ -31,12 +30,17 @@ const Deal = (props) => {
           <Button sm danger>Stop Bounty</Button>
         </div>
       </div>
-
       <div styleName="desc">{description}</div>
-      <div styleName="title">Balance:</div>
-      <Balance {...{ bounty, balance }} />
-      <div styleName="title">Rewards:</div>
-      <Rewards items={rewards} />
+      <div styleName="info">
+        <div>
+          <div styleName="title">Balance:</div>
+          <Balance {...{ bounty, balance }} />
+        </div>
+        <div>
+          <div styleName="title">Rewards:</div>
+          <Rewards items={rewards} />
+        </div>
+      </div>
     </div>
   )
 }
