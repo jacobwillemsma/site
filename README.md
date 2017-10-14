@@ -1,4 +1,4 @@
-<p>
+<p align="center">
   <img src="https://github.com/ThirdEyeTeam/site/blob/master/logo400x400.png?raw=true" height="200" />
 </p>
 
@@ -36,16 +36,6 @@ We decided that this service can be massively improved thanks to a reputation sy
 | Manzyuk Vladimir | System/ Business analyst | System Analyst with 8 years of experience, ex CoFounder of multi media startup tvevt.com, 2-nd place LAToken hackaton, 3-rd place Blockchainhack 2017 |
 
 
-## How is it innovative ?
-
-In the absence of trust, public blockchains typically require additional mechanisms to arbitrate disputes among participants and protect the integrity of the data. This adds complexity to the whole system. 
-
-Besides, there is no central authority.
-The framework we are building is based on smart contracts, reputation system and modified form of liquid democracy. 
-
-Our main goal is  to build an arbitration mechanism for Decentralized Economy that will be customizable, trustworthy and easy to implement in current and future ecosystems and Dapps.
-
-
 ## What tool(s) / platform(s) do you use?
 
  
@@ -54,7 +44,7 @@ Our main goal is  to build an arbitration mechanism for Decentralized Economy th
 | Smart contract | [Solidity + Truffle](https://github.com/ForsetiTeam/SmartContracts) |
 | Front-end | [React.js + Redux + Metamask](https://github.com/ForsetiTeam/ForsetiTeam) |
 | Back-end | [Telegram chat bot + node.js backend](https://github.com/ForsetiTeam/Blockjudje_Telegram-bot) |
-| Blockchain | [Ethereum, Qtum](https://github.com/ForsetiTeam/qtumRealisation) |
+| Blockchain | [Ethereum](https://github.com/ForsetiTeam/qtumRealisation) |
 | Other | [Toshi ethereum token browser+ docker](https://github.com/ForsetiTeam/Token-Browser-Toshi-Implementation) |
 
 
