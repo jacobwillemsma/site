@@ -31,7 +31,7 @@ We decided that this service can be massively improved thanks to a reputation sy
 | Name | Role | Background | 
 | ---- | ---- | ---------- |
 | Ivanov Pavel | Front-end / solidity developer | Over 7 years of exp in Front-End Development, ex CoFounder of Leading Online journalism startup |
-| Shevchenko Alexander | Full-stack developer | Finalist Imagine cup Microsoft Canada 2017 |
+| Shevchenko Alexander | Full-stack developer | Finalist Imagine cup Microsoft Canada 2017 and founder of SafeWatch, mostly works with computer vision.|
 | Kaizer Denis | Back-end / solidity developer | Developing an trading bot for crypto invest fund, Developing an Asset management platform for crypto market, Master Degree in Math, HSE |
 | Manzyuk Vladimir | System/ Business analyst | System Analyst with 8 years of experience, ex CoFounder of multi media startup tvevt.com |
 
