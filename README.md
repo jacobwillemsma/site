@@ -1,4 +1,6 @@
-![Aaaa] (https://github.com/ThirdEyeTeam/site/blob/master/logo400x400.png)
+<p>
+  <img src="" height="70" />
+</p>
 
 ## Answer the questions
 
