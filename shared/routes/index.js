@@ -11,6 +11,7 @@ import HomePage from 'pages/HomePage/HomePage'
 import DealsPage from 'pages/DealsPage/DealsPage'
 import DealPage from 'pages/DealPage/DealPage'
 import AccountPage from 'pages/AccountPage/AccountPage'
+import HistoryPage from 'pages/HistoryPage/HistoryPage'
 
 
 const routes = (
@@ -20,6 +21,7 @@ const routes = (
       <Route {...links.routes.deals} component={DealsPage} />
       <Route {...links.routes.deal} component={DealPage} />
       <Route {...links.routes.account} component={AccountPage} />
+      <Route {...links.routes.history} component={HistoryPage} />
     </Route>
   </Route>
 )

@@ -1,0 +1,56 @@
+.leftSide,
+.middleSide,
+.rightSide {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+}
+
+.middleSide,
+.rightSide {
+  border-left: 1px solid $color-border;
+}
+
+.leftSide {
+  width: 200px;
+  left: 0;
+  box-shadow: rgba(#000, 0.03) -2px 0 0;
+}
+
+.middleSide {
+  width: 40%;
+  left: 200px;
+}
+
+.rightSide {
+  left: calc(40% + 200px);
+  right: 0;
+}
+
+.header {
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid $color-border;
+  padding: 0 20px;
+  @include ff-opensans-bold;
+  font-size: 22px;
+}
+
+.content {
+  padding: 20px;
+}
+
+.logo {
+  width: 100%;
+  display: block;
+  @include square-block;
+}
+
+.name {
+  margin-top: 15px;
+  text-align: center;
+  @include ff-opensans-bold;
+  font-size: 16px;
+}

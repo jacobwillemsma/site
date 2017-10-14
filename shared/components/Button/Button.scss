@@ -28,6 +28,23 @@
   }
 }
 
+.danger {
+  border: 1px solid #e35d83;
+  color: #cb1b3d !important;
+
+  &:hover {
+    background-color: #e6e6e6;
+    border-color: #e36280;
+    color: #ae1937 !important;
+  }
+
+  &:active {
+    background-color: #f7f8f9;
+    border-color: #e35c80;
+    color: #ae1937 !important;
+  }
+}
+
 .small {
   padding: 4px 9px;
   font-size: 13px;

@@ -1,10 +1,27 @@
 import superagent from 'superagent'
 import request from 'sb-request'
 import config from '@eagle/app-config'
+import { readImage } from 'helpers'
 
 
 const fetchLogo = (hash) =>
-  request.get(`org_logo/${hash}`)
+  new Promise((resolve) => {
+    const xhr = new XMLHttpRequest()
+
+    xhr.open('GET', `${config.services.api}org_logo/${hash}`, true)
+    
+    xhr.responseType = 'arraybuffer'
+    
+    xhr.onload = function () {
+      const blob = new Blob([xhr.response], { type: 'image/png' })
+
+      readImage(blob, ({ src }) => resolve(src))
+    }
+
+    xhr.onerror = () => {}
+    
+    xhr.send()
+  })
 
 const fetch = (hash) =>
   fetchLogo(hash)

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Flex, Box } from 'sb-flexbox'
 import cx from 'classnames'
 
 import cssModules from 'react-css-modules'
@@ -7,7 +6,8 @@ import styles from './Deal.scss'
 
 import Balance from 'components/screening/Balance/Balance'
 import Rewards from 'components/screening/Rewards/Rewards'
-import OrganizationLogo from 'components/OrganizationLogo/OrganizationLogo'
+
+import Button from 'components/Button/Button'
 
 
 const Deal = (props) => {
@@ -25,19 +25,18 @@ const Deal = (props) => {
 
   return (
     <div styleName={styleName} className={className} onClick={onClick}>
-      <Flex>
-        <Box>
-          <OrganizationLogo styleName="companyLogo" src={companyLogo} />
-        </Box>
-        <Box auto>
-          <div styleName="name">{name}</div>
-          <div styleName="desc">{description}</div>
-          <div styleName="title">Balance:</div>
-          <Balance {...{ bounty, balance }} />
-          <div styleName="title">Rewards:</div>
-          <Rewards items={rewards} />
-        </Box>
-      </Flex>
+      <div styleName="header">
+        <div styleName="name">{name}</div>
+        <div>
+          <Button sm danger>Stop Bounty</Button>
+        </div>
+      </div>
+
+      <div styleName="desc">{description}</div>
+      <div styleName="title">Balance:</div>
+      <Balance {...{ bounty, balance }} />
+      <div styleName="title">Rewards:</div>
+      <Rewards items={rewards} />
     </div>
   )
 }

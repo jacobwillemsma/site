@@ -13,11 +13,13 @@ export default class Input extends Component {
 
   static defaultProps = {
     multiline: false,
+    focusOnInit: false,
     type: 'text',
   }
 
   render() {
-    const { valueLink, className, inputClassName, label, placeholder, type, multiline, ...rest } = this.props
+    const { valueLink, className, inputClassName, label, placeholder, type,
+      multiline, focusOnInit, ...rest } = this.props
 
     const inputElement = React.createElement(multiline ? TextArea : ValueLinkInput, {
       ...ignoreProps(rest, 'styles'),
@@ -26,6 +28,7 @@ export default class Input extends Component {
       placeholder,
       valueLink,
       type,
+      autoFocus: Boolean(focusOnInit),
       dir: 'auto',
     })
 

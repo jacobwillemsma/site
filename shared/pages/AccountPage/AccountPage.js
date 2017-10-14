@@ -5,6 +5,7 @@ import cssModules from 'react-css-modules'
 import styles from './AccountPage.scss'
 
 import NoOrganization from './NoOrganization/NoOrganization'
+import Organization from './Organization/Organization'
 
 
 @cssModules(styles, { allowMultiple: true })
@@ -17,16 +18,8 @@ export default class AccountPage extends React.Component {
   componentWillMount() {
     actions.organization.fetch('0x00543063406034t0v40340vt034')
       .then((base64) => {
-        console.log(111, base64)
-
-        const image = new Image();
-
-        image.src = `data:image/png;base64,${base64}`;
-
-        console.log(333, image)
-
         this.setState({
-          src: image,
+          src: base64,
         })
       })
   }
@@ -35,11 +28,9 @@ export default class AccountPage extends React.Component {
   render() {
     const { src } = this.state
 
-    if (src) {
-      return (
-        <div style={{ width: "100px", height: "100px", backgroundImage: `url()` }} />
-      )
-    }
+    return (
+      <Organization />
+    )
 
     return (
       <NoOrganization />

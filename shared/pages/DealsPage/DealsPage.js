@@ -15,6 +15,9 @@ export default class DealsPage extends React.Component {
     return (
       <div styleName="container">
         <div styleName="leftSide">
+          <div styleName="header">
+            <div styleName="name">Screenings</div>
+          </div>
           <Deals />
         </div>
         <div styleName="rightSide">

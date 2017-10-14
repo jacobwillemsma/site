@@ -1,11 +1,13 @@
+
 import generateLinks from './generateLinks'
 
 
 const links = generateLinks({
   home: '',
-  deals: 'deals',
-  deal: 'deal/:address',
+  deals: 'screening',
+  deal: 'screening/:address',
   account: 'account',
+  history: 'history',
 })
 
 export default links
