@@ -1,5 +1,5 @@
 <p>
-  <img src="" height="70" />
+  <img src="https://github.com/ThirdEyeTeam/site/blob/master/logo400x400.png?raw=true" height="200" />
 </p>
 
 ## Answer the questions
