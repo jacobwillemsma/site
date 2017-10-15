@@ -46,18 +46,6 @@ We decided that this service can be massively improved thanks to a reputation sy
 | Back-end | [Storj API + Mango DB + node.js backend](https://github.com/ForsetiTeam/Blockjudje_Telegram-bot) |
 | Blockchain | [Ethereum](https://github.com/ForsetiTeam/qtumRealisation) |
 
-
-## What was the biggest obstacle that your team overcame ?
-
-Web3py - not enough documentation, outdated, bug reports, not informative at all.
- 
-There is no light Node for ethereum to work with  
-
-Wasted 3 hours of debugging asynchronous  solidity code because we just forgot to increase gas limit for a transaction  
- 
- 
-
-
 # Front-End
 
 [site](http://)
