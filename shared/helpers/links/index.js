@@ -4,8 +4,9 @@ import generateLinks from './generateLinks'
 
 const links = generateLinks({
   home: '',
-  deals: 'screening',
-  deal: 'screening/:address',
+  screenings: 'screening',
+  screening: 'screening/:address',
+  newScreening: 'new-screening',
   account: 'account',
   history: 'history',
 })

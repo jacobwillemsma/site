@@ -5,9 +5,14 @@
 .link {
   width: $width-sidebar;
   height: $width-sidebar;
+  border-top: 1px solid #1e122b;
   display: block;
   position: relative;
   cursor: pointer;
+
+  &:last-child {
+    border-bottom: 1px solid #1e122b;
+  }
   
   &:hover,
   &.active {

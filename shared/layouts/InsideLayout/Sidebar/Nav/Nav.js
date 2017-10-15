@@ -202,7 +202,7 @@ const clockIcon = (
 
 const nav = [
   { title: 'Account', icon: shieldIcon, to: links.abs.account },
-  { title: 'Screening', icon: screeningIcon, to: links.abs.deals },
+  { title: 'Screening', icon: screeningIcon, to: links.abs.screenings },
   // { title: 'History', icon: clockIcon, to: links.abs.history },
 ]
 

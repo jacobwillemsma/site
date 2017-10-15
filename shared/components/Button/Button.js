@@ -7,11 +7,12 @@ import styles from './Button.scss'
 import Href from 'components/Href/Href'
 
 
-const Button = ({ children, sm, md, lg, danger, to, ...rest }) => {
+const Button = ({ children, sm, md, lg, xlg, danger, to, ...rest }) => {
   const styleName = cx('button', {
     'small': sm,
     'medium': md,
     'large': lg,
+    'extraLarge': xlg,
     'danger': danger,
   })
 

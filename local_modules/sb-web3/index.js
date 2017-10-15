@@ -1,28 +1,17 @@
 import Serializer from './Serializer'
+import ContractCollection from './ContractCollection'
+import { getContract, gasParams, checkAddressZero } from './utils'
+import getWeb3, { waitWeb3 } from './web3'
 
 
-const waitWeb3 = () => new Promise((resolve) => {
-  if (typeof window.web3 !== 'undefined') {
-    resolve()
-  } else {
-    const timer = setInterval(() => {
-      if (typeof window.web3 !== 'undefined') {
-        clearInterval(timer)
-        resolve(web3)
-      }
-    }, 300)
-  }
-})
-
-const gasParams = (deposit) => ({
-  gas: 3000000,
-  value: deposit,
-  from: window.web3.eth.accounts[0],
-})
-
+export default getWeb3
 
 export {
-  Serializer,
-  gasParams,
   waitWeb3,
+  gasParams,
+  checkAddressZero,
+  getContract,
+
+  Serializer,
+  ContractCollection,
 }

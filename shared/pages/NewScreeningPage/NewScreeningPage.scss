@@ -1,0 +1,54 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.field {
+  margin-top: 20px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.fileInputContainer {
+  display: block;
+  margin-right: 30px;
+}
+
+.fileTitle {
+  font-size: 15px;
+  text-align: center;
+  color: #625471;
+}
+
+.flex {
+  margin: 0 -10px;
+  display: block;
+
+  :global(.Box) {
+    padding: 0 10px;
+  }
+}
+
+.buttonContainer {
+  margin-top: 40px;
+  text-align: center;
+}

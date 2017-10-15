@@ -1,7 +1,7 @@
 import { reducers } from 'redux/core'
 
 
-const setActiveIndex = (index) => reducers.deals.setActiveIndex(index)
+const setActiveIndex = (index) => reducers.screenings.setActiveIndex(index)
 
 
 export default {

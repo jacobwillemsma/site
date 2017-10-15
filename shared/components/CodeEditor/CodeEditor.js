@@ -107,20 +107,20 @@ export default class CodeEditor extends React.Component {
             {children || `pragma solidity ^0.4.0;
 
   import "./Structures.sol";
-  import "./DealExtension.sol";
+  import "./ScreeningExtension.sol";
 
-  contract Deal is DealExtension {
+  contract Screening is ScreeningExtension {
 
-    Structures.DealInfo dealInfo;
-    Structures.DealParty dealParty;
+    Structures.ScreeningInfo screeningInfo;
+    Structures.ScreeningParty screeningParty;
     Structures.ProposedChanges proposedChanges;
 
     address[] public executors;
 
     bool executorAcceptChanges;
     bool customerAcceptChanges;
-    bool executorConfirmDeal;
-    bool customerConfirmDeal;
+    bool executorConfirmScreening;
+    bool customerConfirmScreening;
     bool onTime;
     bool executorFinish;
 
@@ -128,24 +128,24 @@ export default class CodeEditor extends React.Component {
     uint executorsAmount;
 
     modifier onlyMember {
-      require(msg.sender == dealParty.customer || msg.sender == dealParty.executor);
+      require(msg.sender == screeningParty.customer || msg.sender == screeningParty.executor);
       _;
     }
 
     modifier onlyCustomer {
-      require(msg.sender == dealParty.customer);
+      require(msg.sender == screeningParty.customer);
       _;
     }
     modifier onlyExecutor {
-      require(msg.sender == dealParty.executor);
+      require(msg.sender == screeningParty.executor);
       _;
     }
 
 
-    function Deal(address customerAddress,string title, string description, string attachment, uint deposit, uint dealTime, uint payForWork) {
+    function Screening(address customerAddress,string title, string description, string attachment, uint deposit, uint screeningTime, uint payForWork) {
       require(payForWork <= deposit);
-      dealInfo = Structures.DealInfo(title, description, attachment, deposit, dealTime, payForWork);
-      dealParty.customer = customerAddress;
+      screeningInfo = Structures.ScreeningInfo(title, description, attachment, deposit, screeningTime, payForWork);
+      screeningParty.customer = customerAddress;
 
     }
 
@@ -155,61 +155,61 @@ export default class CodeEditor extends React.Component {
 
     // test
     function getCustomer() returns(address) {
-      return dealParty.customer;
+      return screeningParty.customer;
     }
 
     function becomeExecutor()  {
-      require(dealParty.executor == 0x0);
+      require(screeningParty.executor == 0x0);
       executors.push(msg.sender);
       executorsAmount = executors.length;
     }
 
     function acceptExecutor(uint index) {
-      dealParty.executor = executors[index];
+      screeningParty.executor = executors[index];
     }
 
-    function proposeChanges(string attachment, uint deposit, uint dealTime) onlyMember {
-      require(executorConfirmDeal == false && customerConfirmDeal == false);
-      proposedChanges = Structures.ProposedChanges(attachment, deposit, dealTime);
+    function proposeChanges(string attachment, uint deposit, uint screeningTime) onlyMember {
+      require(executorConfirmScreening == false && customerConfirmScreening == false);
+      proposedChanges = Structures.ProposedChanges(attachment, deposit, screeningTime);
     }
 
     function acceptChanges() onlyMember {
-      if (msg.sender == dealParty.executor) {
+      if (msg.sender == screeningParty.executor) {
         executorAcceptChanges = true;
       }
       else {
         customerAcceptChanges = true;
       }
       if (customerAcceptChanges && executorAcceptChanges){
-        dealInfo.attachment = proposedChanges.attachment;
-        dealInfo.deposit = proposedChanges.deposit;
-        dealInfo.dealTime = proposedChanges.dealTime;
+        screeningInfo.attachment = proposedChanges.attachment;
+        screeningInfo.deposit = proposedChanges.deposit;
+        screeningInfo.screeningTime = proposedChanges.screeningTime;
       }
     }
 
 
     function depositMoney() payable {}
 
-    function startDeal() onlyMember {
+    function startScreening() onlyMember {
 
-      require(this.balance >= dealInfo.deposit);
-      require(dealParty.executor != nullx0);
-      require(customerConfirmDeal && executorConfirmDeal);
+      require(this.balance >= screeningInfo.deposit);
+      require(screeningParty.executor != nullx0);
+      require(customerConfirmScreening && executorConfirmScreening);
 
       startDate = now;
     }
 
-    function confirmDeal() onlyMember {
-      if (msg.sender == dealParty.executor){
-        executorConfirmDeal = true;
+    function confirmScreening() onlyMember {
+      if (msg.sender == screeningParty.executor){
+        executorConfirmScreening = true;
       }
-      if (msg.sender == dealParty.customer){
-        customerConfirmDeal = true;
+      if (msg.sender == screeningParty.customer){
+        customerConfirmScreening = true;
       }
     }
 
     function finishWork() onlyExecutor {
-      if ((now - startDate) > dealInfo.dealTime) {
+      if ((now - startDate) > screeningInfo.screeningTime) {
         onTime = false;
       }
       else {
@@ -218,9 +218,9 @@ export default class CodeEditor extends React.Component {
       executorFinish = true;
     }
 
-    function finishDeal() onlyCustomer {
+    function finishScreening() onlyCustomer {
       require(executorFinish);
-      msg.sender.transfer(dealInfo.deposit);
+      msg.sender.transfer(screeningInfo.deposit);
     }
   }
   `}

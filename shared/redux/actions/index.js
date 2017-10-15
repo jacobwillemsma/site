@@ -1,10 +1,10 @@
-import organization from './organization'
-import deals from './deals'
+import company from './company'
+import screenings from './screenings'
 import claims from './claims'
 
 
 export default {
-  organization,
-  deals,
+  company,
+  screenings,
   claims,
 }

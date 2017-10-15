@@ -4,6 +4,8 @@ import links from './links'
 import categories from './categories'
 import readImage from './readImage'
 import toFormatData from './toFormatData'
+import contracts from './contracts'
+import getBase64 from './getBase64'
 
 
 export {
@@ -13,4 +15,6 @@ export {
   categories,
   readImage,
   toFormatData,
+  contracts,
+  getBase64,
 }

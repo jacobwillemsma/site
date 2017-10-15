@@ -13,6 +13,10 @@
   box-shadow: rgba(#000, 0.03) 0 2px 0;
   @include no-user-select;
 
+  span {
+    @include ff-opensans-bold;
+  }
+
   &:hover {
     background-color: #e6e6e6;
     border-color: #afa3bb;
@@ -58,4 +62,9 @@
 .large {
   padding: 8px 15px;
   font-size: 15px;
+}
+
+.extraLarge {
+  padding: 11px 18px;
+  font-size: 16px;
 }
