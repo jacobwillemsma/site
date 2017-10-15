@@ -1,7 +1,7 @@
 import getWeb3 from './web3'
 
 
-const getContract = (address, ABI) => getWeb3().eth.contract(ABI).at(address)
+const getContract = (address, abi) => window.web3.eth.contract(abi).at(address)
 
 const gasParams = (deposit) => ({
   gas: 3000000,

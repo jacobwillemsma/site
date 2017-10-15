@@ -42,7 +42,13 @@ export default class Company extends React.Component {
           <Screenings />
         </div>
         <div styleName="rightSide">
-          <Header title="Claims" />
+          <Header title="Claims" spaceBetween={false}>
+            <div styleName="categories">
+              <div styleName="category minor">23</div>
+              <div styleName="category major">8</div>
+              <div styleName="category critical">3</div>
+            </div>
+          </Header>
           <Claims />
         </div>
       </div>

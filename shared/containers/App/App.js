@@ -4,6 +4,8 @@ import actions from 'redux/actions'
 import { links, contracts } from 'helpers'
 import { waitWeb3 } from 'sb-web3'
 
+import Loader from 'components/Loader/Loader'
+
 import './App.scss'
 
 
@@ -22,9 +24,16 @@ export default class App extends React.Component {
     waitWeb3().then(() => {
       console.info('Web3 injected!')
 
-      this.setState({
-        inited: true,
-      })
+      actions.company.fetch()
+        .then(() => {
+          this.setState({
+            inited: true,
+          })
+        }, () => {
+          this.setState({
+            inited: true,
+          })
+        })
     })
   }
 
@@ -32,7 +41,13 @@ export default class App extends React.Component {
     const { inited } = this.state
     const { children } = this.props
 
-    return inited && (
+    if (!inited) {
+      return (
+        <Loader />
+      )
+    }
+
+    return (
       <div>
         {children}
       </div>

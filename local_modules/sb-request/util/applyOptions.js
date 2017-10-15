@@ -11,13 +11,13 @@ const applyOptions = (opts) => {
     ...(opts.headers || {}),
   })
 
-  if (opts.timeout) {
-    req.timeout({
-      response: 5000,  // Wait 5 seconds for the server to start sending,
-      deadline: 60000, // but allow 1 minute for the file to finish loading.
-      ...opts.timeout,
-    })
-  }
+  // if (opts.timeout) {
+  //   req.timeout({
+  //     response: 5000,  // Wait 5 seconds for the server to start sending,
+  //     deadline: 60000, // but allow 1 minute for the file to finish loading.
+  //     ...opts.timeout,
+  //   })
+  // }
 
   if (opts.query) {
     req.query(fixQuery(opts.query))

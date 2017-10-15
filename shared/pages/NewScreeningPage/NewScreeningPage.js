@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'sb-valuelink'
 import { Flex, Box } from 'sb-flexbox'
+import actions from 'redux/actions'
+import { links } from 'helpers'
 
 import cssModules from 'react-css-modules'
 import styles from './NewScreeningPage.scss'
@@ -15,11 +17,10 @@ export default class NewScreeningPage extends React.Component {
   state = {
     name: '',
     behaviour: '',
-    codeFile: null,
-    bountyAmount: 0,
-    minorReward: 0,
-    majorReward: 0,
-    criticalReward: 0,
+    bountyAmount: '',
+    minorReward: '',
+    majorReward: '',
+    criticalReward: '',
 
     selectedFile: null,
   }
@@ -27,11 +28,18 @@ export default class NewScreeningPage extends React.Component {
   handleSelectSmartContract = (event) => {
     const file = event.target.files[0]
 
-    console.log(333, file)
-
     this.setState({
       selectedFile: file,
     })
+  }
+
+  handleSubmit = () => {
+    const { selectedFile, ...values } = this.state
+
+    actions.screenings.create(values, selectedFile)
+      .then(() => {
+        actions.router.push(links.abs.company)
+      })
   }
 
   render() {
@@ -76,18 +84,18 @@ export default class NewScreeningPage extends React.Component {
           <div styleName="field">
             <Flex styleName="flex" justify="space-between">
               <Box auto>
-                <Input type="number" valueLink={linked.minorReward} label="Minor reward (ETH)" />
+                <Input styleName="minor" type="number" valueLink={linked.minorReward} label="Minor reward (ETH)" />
               </Box>
               <Box auto>
-                <Input type="number" valueLink={linked.majorReward} label="Major reward (ETH)" />
+                <Input styleName="major" type="number" valueLink={linked.majorReward} label="Major reward (ETH)" />
               </Box>
               <Box auto>
-                <Input type="number" valueLink={linked.criticalReward} label="Critical reward (ETH)" />
+                <Input styleName="critical" type="number" valueLink={linked.criticalReward} label="Critical reward (ETH)" />
               </Box>
             </Flex>
           </div>
           <div styleName="buttonContainer">
-            <Button xlg>Create Screening</Button>
+            <Button xlg onClick={this.handleSubmit}>Create Screening</Button>
           </div>
         </div>
       </div>

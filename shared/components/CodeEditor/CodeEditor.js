@@ -94,7 +94,7 @@ export default class CodeEditor extends React.Component {
   }
 
   render() {
-    const { children } = this.props
+    const { children, options } = this.props
 
     return (
       <div styleName="codeEditor" ref={(el) => this.editorNode = el}>
@@ -103,7 +103,7 @@ export default class CodeEditor extends React.Component {
           {codeIcon}
         </div>
         <div styleName="code">
-          <SyntaxHighlighter language="javascript" style={obsidian} showLineNumbers>
+          <SyntaxHighlighter language="javascript" style={obsidian} showLineNumbers {...options}>
             {children || `pragma solidity ^0.4.0;
 
   import "./Structures.sol";

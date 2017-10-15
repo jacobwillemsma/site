@@ -52,3 +52,54 @@
   @include ff-opensans-bold;
   font-size: 16px;
 }
+
+.categories {
+  padding-top: 6px;
+  margin-left: 20px;
+  font-size: 0;
+}
+
+.category {
+  margin-left: 15px;
+  padding-left: 16px;
+  position: relative;
+  font-size: 14px;
+  @include inline-block;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -3px;
+    border-radius: 50%;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &.minor {
+
+    &:before {
+      background-color: #04d04c;
+    }
+  }
+
+  &.major {
+
+    &:before {
+      background-color: #f98216;
+    }
+  }
+
+  &.critical {
+
+    &:before {
+      background-color: #ff2843;
+    }
+  }
+}

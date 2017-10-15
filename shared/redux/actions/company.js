@@ -21,44 +21,65 @@ const getAddress = () =>
   })
 
 const fetchLogo = (hash) =>
-  new Promise((resolve) => {
+  new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest()
 
     xhr.open('GET', `${config.services.api}org_logo/${hash}`, true)
     xhr.responseType = 'arraybuffer'
     
     xhr.onload = function () {
-      const blob = new Blob([xhr.response], { type: 'image/png' })
+      if (xhr.status > 400) {
+        reject()
+      }
+      else {
+        const blob = new Blob([xhr.response], { type: 'image/png' })
 
-      readImage(blob, ({ src }) => resolve(src))
+        readImage(blob, ({ src }) => resolve(src))
+      }
     }
 
-    xhr.onerror = () => {}
+    xhr.onerror = () => {
+      reject()
+    }
+
     xhr.send()
   })
 
 const fetch = (companyAddress) =>
-  new Promise((resolve) => {
-    const company = getContract(companyAddress, contracts.company.abi)
+  new Promise((resolve, reject) => {
+    getAddress()
+      .then((companyAddress) => {
+        if (companyAddress) {
+          const company = getContract(companyAddress, contracts.company.abi)
 
-    new Serializer({
-      name: { modify: v => v.toString() },
-      fileHash: {  },
-      spentETH: { modify: v => v.toNumber() },
-      screeningCount: { modify: v => v.toNumber() },
-    })
-      .functionsToObject(company, (res) => {
-        fetchLogo(res.fileHash)
-          .then((logo) => {
-            const data = {
-              address: companyAddress,
-              ...res,
-              logo,
-            }
-
-            reducers.company.update(data)
-            resolve(data)
+          new Serializer({
+            name: { modify: v => v.toString() },
+            fileHash: {  },
+            spentETH: { modify: v => v.toNumber() },
+            screeningCount: { modify: v => v.toNumber() },
           })
+            .functionsToObject(company, (res) => {
+              reducers.company.update({
+                ...res,
+                address: companyAddress,
+              })
+
+              fetchLogo(res.fileHash)
+                .then((logo) => {
+                  const data = {
+                    logo,
+                  }
+
+                  reducers.company.update(data)
+                  resolve(data)
+                }, () => {
+                  reject()
+                })
+            })
+        }
+        else {
+          reject()
+        }
       })
   })
 

@@ -49,12 +49,15 @@ export const initialState = fromJS({
   logo: null,
   name: null,
   fileHash: null,
-  screenings: [],
+  screenings: [], // { dbID, name, bountyAmount, minorReward, majorReward, criticalReward }
   activeScreeningIndex: 0,
 })
 
 export const update = (state, payload) =>
   state.merge(payload)
+
+export const addScreening = (state, payload) =>
+  state.update('screenings', (screenings) => screenings.push(fromJS(payload)))
 
 export const setScreenings = (state, payload) =>
   state.set('screenings', fromJS(payload))

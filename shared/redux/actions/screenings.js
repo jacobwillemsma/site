@@ -1,30 +1,52 @@
 import { reducers } from 'redux/core'
-import { waitWeb3, checkAddressZero, getContract, Serializer, ContractCollection } from 'sb-web3'
-import { contracts, getState } from 'helpers'
+import request from 'sb-request'
+import actions from 'redux/actions'
+import superagent from 'superagent'
+import { waitWeb3, getContract, Serializer } from 'sb-web3'
+import { contracts, getState, links } from 'helpers'
+import config from '@eagle/app-config'
 
 
 const setActiveIndex = (index) => reducers.screenings.setActiveIndex(index)
 
-const create = (values) => {
-  const { company: { address } } = getState()
+const create = (values, file) =>
+  new Promise((resolve) => {
+    const { company: { name: companyName, address: companyAddress } } = getState()
 
-  const company = getContract(address)
+    const company = getContract(companyAddress, contracts.company.abi)
 
-  const data = new Serializer([
-    { key: 'hash' },
-    { key: 'name' },
-    { key: 'authorName' },
-    { key: 'ownershipPrice' },
-    { key: 'rentPrice' },
-  ])
-    .toArray(values)
+    superagent
+      .post(`${config.services.api}codeUpload`)
+      .attach('file', file, 'file')
+      .field('behaviour', values.behaviour)
+      .field('organisation', companyName)
+      .end((err, res) => {
+        console.log(555, res)
 
-  company.createScreening.sendTransaction(...data, (err, res) => {
+        const _values = {
+          dbID: res.id,
+          ...values,
+        }
 
+        const data = new Serializer([
+          { key: 'dbID' },
+          { key: 'name' },
+          { key: 'bountyAmount' },
+          { key: 'minorReward' },
+          { key: 'majorReward' },
+          { key: 'criticalReward' },
+        ])
+          .toArray(_values)
+
+        company.createScreening.sendTransaction(...data, (err, res) => {
+          reducers.company.addScreening(_values)
+          resolve()
+        })
+      })
   })
-}
 
 
 export default {
   setActiveIndex,
+  create,
 }

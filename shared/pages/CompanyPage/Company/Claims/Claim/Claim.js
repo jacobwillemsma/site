@@ -41,7 +41,7 @@ export default class Claim extends React.Component {
           </div>
         </div>
         <div styleName="code">
-          <CodeEditor>
+          <CodeEditor options={{ startingLineNumber: 139 }}>
 {`Structures.ProposedChanges proposedChanges;
 
 address[] public executors;

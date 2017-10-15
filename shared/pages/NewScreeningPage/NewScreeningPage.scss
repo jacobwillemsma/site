@@ -28,6 +28,42 @@
   }
 }
 
+.minor {
+
+  label,
+  input {
+    border-color: #006925;
+  }
+
+  label {
+    color: #006925;
+  }
+}
+
+.major {
+
+  label,
+  input {
+    border-color: #f98216;
+  }
+
+  label {
+    color: #f98216;
+  }
+}
+
+.critical {
+
+  label,
+  input {
+    border-color: #ff2843;
+  }
+
+  label {
+    color: #ff2843;
+  }
+}
+
 .fileInputContainer {
   display: block;
   margin-right: 30px;
