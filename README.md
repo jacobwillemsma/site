@@ -43,7 +43,7 @@ We decided that this service can be massively improved thanks to a reputation sy
 | ---- | ---- |
 | Smart contract | [Solidity](https://github.com/ForsetiTeam/SmartContracts) |
 | Front-end | [React.js + Redux + Metamask](https://github.com/ForsetiTeam/ForsetiTeam) |
-| Back-end | [Storj API + node.js backend](https://github.com/ForsetiTeam/Blockjudje_Telegram-bot) |
+| Back-end | [Storj API + Mango DB + node.js backend](https://github.com/ForsetiTeam/Blockjudje_Telegram-bot) |
 | Blockchain | [Ethereum](https://github.com/ForsetiTeam/qtumRealisation) |
 
 
@@ -60,7 +60,7 @@ Wasted 3 hours of debugging asynchronous  solidity code because we just forgot t
 
 # Front-End
 
-[Forseti site](http://forseti.im/)
+[site](http://)
 
 ### Experience
 
@@ -102,8 +102,8 @@ Pavel Ivanov: *It was an excellent experience of getting acquainted with the tec
 #### Setup
 
 ```
-git clone https://github.com/amijkko/ForsetiTeam.git
-cd ForsetiTeam
+git clone https://github.com/
+cd 
 npm start
 ```
 
