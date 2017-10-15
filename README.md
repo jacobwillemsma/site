@@ -41,11 +41,10 @@ We decided that this service can be massively improved thanks to a reputation sy
  
 | Entity | Technologies |
 | ---- | ---- |
-| Smart contract | [Solidity + Truffle](https://github.com/ForsetiTeam/SmartContracts) |
+| Smart contract | [Solidity](https://github.com/ForsetiTeam/SmartContracts) |
 | Front-end | [React.js + Redux + Metamask](https://github.com/ForsetiTeam/ForsetiTeam) |
-| Back-end | [Telegram chat bot + node.js backend](https://github.com/ForsetiTeam/Blockjudje_Telegram-bot) |
+| Back-end | [Storj API + node.js backend](https://github.com/ForsetiTeam/Blockjudje_Telegram-bot) |
 | Blockchain | [Ethereum](https://github.com/ForsetiTeam/qtumRealisation) |
-| Other | [Toshi ethereum token browser+ docker](https://github.com/ForsetiTeam/Token-Browser-Toshi-Implementation) |
 
 
 ## What was the biggest obstacle that your team overcame ?
