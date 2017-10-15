@@ -71,15 +71,16 @@ Pavel Ivanov: *It was an excellent experience of getting acquainted with the tec
 - `client` - client files
 - `config` - settings
 - `local_modules` - additional modules
+  - *`sb-web3`* - *util / wrapper for web3*
 - `shared` - universal files
   - `components` - reusable components or partials
   - `containers` - Root, App, Providers, etc
   - `layouts` - mark up layouts - wrappers for pages (check routes)
   - `pages` - pages are leafs in routes
   - `helpers` - util / helpers
+    - `contracts` - ETH Contracts
   - `redux`
     - `actions` - Redux actions
-    - `contracts` - ETH Contracts
     - `core` - setup Redux
     - `reducers` - Redux [Redaction] reducers
   - `routes`
@@ -90,8 +91,8 @@ Pavel Ivanov: *It was an excellent experience of getting acquainted with the tec
 #### Setup
 
 ```
-git clone https://github.com/
-cd 
+git clone https://github.com/ThirdEyeTeam/site.git
+cd ./site
 npm start
 ```
 
@@ -103,4 +104,4 @@ npm run <task>
 
 * `clean` - remove compile files
 * `dev` - start server in development mode (via nodemon)
-* `build` - assembly files for client in *production* mode
+* `build` - assembly files for client in *production* mode and deploy them to surge.sh
