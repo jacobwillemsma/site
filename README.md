@@ -105,3 +105,26 @@ npm run <task>
 * `clean` - remove compile files
 * `dev` - start server in development mode (via nodemon)
 * `build` - assembly files for client in *production* mode and deploy them to surge.sh
+
+
+### Screenshots
+
+<p>
+  <img src="./screenshots/1.png" />
+</p>
+
+<p>
+  <img src="./screenshots/2.png" />
+</p>
+
+<p>
+  <img src="./screenshots/3.png" />
+</p>
+
+<p>
+  <img src="./screenshots/4.png" />
+</p>
+
+<p>
+  <img src="./screenshots/5.png" />
+</p>
