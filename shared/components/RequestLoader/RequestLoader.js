@@ -15,5 +15,5 @@ const RequestLoader = ({ isVisible }) => (
 )
 
 export default connect({
-  isVisible: 'ui.isLoaderVisible',
+  isVisible: 'ui.isRequestLoaderVisible',
 })(cssModules(RequestLoader, styles))

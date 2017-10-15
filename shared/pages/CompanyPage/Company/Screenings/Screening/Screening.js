@@ -1,5 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
+import { fromJS } from 'sb-immutable'
 
 import cssModules from 'react-css-modules'
 import styles from './Screening.scss'
@@ -11,16 +12,16 @@ import Button from 'components/Button/Button'
 
 const Screening = (props) => {
   const {
-    data: {
-      company: { logo: companyLogo, name: companyName },
-      name, description, bounty, balance, rewards,
-    },
+    company: { logo: companyLogo, name: companyName },
+    data: { name, description, bounty, balance, minorReward, majorReward, criticalReward },
     isActive, className, onClick,
   } = props
 
   const styleName = cx('card', {
     'active': isActive,
   })
+
+  const rewards = fromJS({ minorReward, majorReward, criticalReward })
 
   return (
     <div styleName={styleName} className={className} onClick={onClick}>

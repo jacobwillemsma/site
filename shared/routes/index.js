@@ -17,8 +17,9 @@ import NewScreeningPage from 'pages/NewScreeningPage/NewScreeningPage'
 
 const routes = (
   <Route component={App}>
+    <Route path="/" component={HomePage} />
+
     <Route component={InsideLayout}>
-      <Route {...links.routes.home} component={HomePage} />
       <Route {...links.routes.screenings} component={ScreeningsPage} />
       <Route {...links.routes.screening} component={ScreeningPage} />
       <Route {...links.routes.account} component={CompanyPage} />

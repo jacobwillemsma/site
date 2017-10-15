@@ -36,10 +36,12 @@ export default class NewScreeningPage extends React.Component {
   handleSubmit = () => {
     const { selectedFile, ...values } = this.state
 
-    actions.screenings.create(values, selectedFile)
-      .then(() => {
-        actions.router.push(links.abs.company)
-      })
+    if (selectedFile && values.bountyAmount) {
+      actions.screenings.create(values, selectedFile)
+        .then(() => {
+          actions.router.push(links.abs.account)
+        })
+    }
   }
 
   render() {
@@ -79,7 +81,7 @@ export default class NewScreeningPage extends React.Component {
             </Flex>
           </div>
           <div styleName="field">
-            <Input type="number" valueLink={linked.bountyAmount} label="Bounty amount (ETH)" />
+            <Input type="number" valueLink={linked.bountyAmount} label="Deposit for bounty (ETH)" />
           </div>
           <div styleName="field">
             <Flex styleName="flex" justify="space-between">

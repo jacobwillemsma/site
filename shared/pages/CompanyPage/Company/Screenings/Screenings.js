@@ -9,16 +9,17 @@ import Screening from './Screening/Screening'
 
 
 @connect({
-  items: 'company.screenings',
+  company: 'company',
+  screenings: 'company.screenings',
   activeIndex: 'company.activeScreeningIndex',
 })
 @cssModules(styles)
 export default class Screenings extends React.Component {
 
   render() {
-    const { className, screenings, activeIndex } = this.props
+    const { className, company, screenings, activeIndex } = this.props
 
-    return false && (
+    return Boolean(screenings.size) && (
       <div className={className}>
         {
           screenings.map((item, index) => (
@@ -26,6 +27,7 @@ export default class Screenings extends React.Component {
               key={index}
               styleName="card"
               data={item}
+              company={company}
               isActive={activeIndex === index}
               onClick={() => actions.screenings.setActiveIndex(index)}
             />

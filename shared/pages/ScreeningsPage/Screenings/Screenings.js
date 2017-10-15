@@ -1,5 +1,4 @@
 import React from 'react'
-import { Flex, Box } from 'sb-flexbox'
 import { connect } from 'redaction/immutable'
 import actions from 'redux/actions'
 

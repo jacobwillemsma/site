@@ -3,6 +3,8 @@ import React from 'react'
 import cssModules from 'react-css-modules'
 import styles from './InsideLayout.scss'
 
+import RequestLoader from 'components/RequestLoader/RequestLoader'
+
 import Sidebar from './Sidebar/Sidebar'
 
 
@@ -14,6 +16,7 @@ const InsideLayout = ({ children }) => (
     <div styleName="content">
       {children}
     </div>
+    <RequestLoader />
   </div>
 )
 
