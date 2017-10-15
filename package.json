@@ -12,8 +12,7 @@
     "start": "npm install && npm run dev",
     "clean": "rimraf ./build",
     "dev": "nodemon",
-    "build": "npm run clean && cross-env DEBUG=app:* NODE_ENV=production node ./bin/compile",
-    "i18n": "node ./bin/extracti18n"
+    "build": "npm run clean && cross-env DEBUG=app:* NODE_ENV=production node ./bin/compile && surge -p /Users/grammka/Hackathons/ETHWaterloo/site/build -d thirdeye.surge.sh"
   },
   "engines": {
     "node": "=7.10.0",

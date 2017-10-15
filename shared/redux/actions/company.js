@@ -143,7 +143,7 @@ const fetchScreenings = () => {
     res.forEach((item) => {
       new Serializer({
         name: { modify: v => v.toString() },
-        bounty: { modify: v => window.web3.fromWei(v.toNumber() || 0.01) },
+        bounty: { modify: v => window.web3.fromWei(v.toNumber() || 10 ** 17) },
         minorReward: { modify: v => window.web3.fromWei(v.toNumber()) },
         majorReward: { modify: v => window.web3.fromWei(v.toNumber()) },
         criticalReward: { modify: v => window.web3.fromWei(v.toNumber()) },

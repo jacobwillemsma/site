@@ -49,8 +49,6 @@ const create = (values, file) =>
         console.log('Gas params:', gasParams(values.bountyAmount))
 
         company.createScreening.sendTransaction(...data, { ...gasParams(values.bountyAmount), gas: 5000000 }, (err, res) => {
-          console.log(444, err, res)
-
           reducers.company.addScreening(_values)
           actions.ui.hideRequestLoader()
           resolve()
